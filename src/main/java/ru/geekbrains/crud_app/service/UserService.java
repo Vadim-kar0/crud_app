@@ -1,5 +1,6 @@
 package ru.geekbrains.crud_app.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.geekbrains.crud_app.model.User;
 import ru.geekbrains.crud_app.repository.UserRepository;
@@ -8,12 +9,9 @@ import java.util.List;
 
 
 @Service
+@AllArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     public List<User> findAll(){
         return userRepository.findAll();
